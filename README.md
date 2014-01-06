@@ -10,6 +10,4 @@ Brew formulae for [Simon Tatham's Portable Puzzle Collection](http://www.chiark.
 
 Issues
 ------
-  1. `--HEAD` is required, but also not pleasant, and is based on the lack of a version number in the source code repository.
-  2. There's no version number in the binary, and is probably set via a VER environment variable to `make`. Perhaps there's a way to fix this, and issue 1, simultaneously.
-
+  * `--HEAD` is required, but not pleasant, and is required because versioning is not automatically based on the repo version number.

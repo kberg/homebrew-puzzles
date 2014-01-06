@@ -10,7 +10,7 @@ class PuzzlesHeadDownloadStrategy < SubversionDownloadStrategy
 end
 
 class Puzzles < Formula
-  depends_on 'halibut' => :build
+  depends_on 'halibut'
   homepage 'http://www.chiark.greenend.org.uk/~sgtatham/puzzles/'
   head 'svn://svn.tartarus.org/sgt/puzzles',
       :using => PuzzlesHeadDownloadStrategy

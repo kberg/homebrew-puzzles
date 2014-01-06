@@ -6,7 +6,7 @@ Brew formulae for [Simon Tatham's Portable Puzzle Collection](http://www.chiark.
     $ brew tap kberg/puzzles
     $ brew install --env=std --HEAD puzzles
     $ brew linkapps
-    $ open /Applications/Puzzles.app
+    $ open -a Puzzles
 
 Issues
 ------

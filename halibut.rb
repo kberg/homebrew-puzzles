@@ -1,4 +1,5 @@
 require 'formula'
+require 'fileutils'
 
 class Halibut < Formula
   homepage 'http://www.chiark.greenend.org.uk/~sgtatham/halibut/'
@@ -6,12 +7,16 @@ class Halibut < Formula
   sha1 '1e4643faf2bb4e1843740b8c70635d3d33bb7989'
 
   def install
-    ENV.deparallelize  # if your formula fails when building in parallel
-    system "make", "mandir=/usr/local/share/man", "all"
+    ENV.deparallelize
+
+    FileUtils.mkdir_p "#{prefix}/bin"
+    FileUtils.mkdir_p "#{man}/man1"
+
+    system "make", "prefix=#{prefix}", "mandir=#{man}", "all"
     cd "doc/" do
-      system "make", "mandir=/usr/local/share/man", "all"
+      system "make", "prefix=#{prefix}", "mandir=#{man}"
     end
-    system "make", "mandir=/usr/local/share/man", "install"
+    system "make", "prefix=#{prefix}", "mandir=#{man}", "install"
   end
 
   test do

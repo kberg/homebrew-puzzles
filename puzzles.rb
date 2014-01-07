@@ -14,7 +14,6 @@ class Puzzles < Formula
   homepage 'http://www.chiark.greenend.org.uk/~sgtatham/puzzles/'
   head 'svn://svn.tartarus.org/sgt/puzzles', :using => PuzzlesHeadDownloadStrategy
   url 'svn://svn.tartarus.org/sgt/puzzles@10107', :using => PuzzlesHeadDownloadStrategy
-  version "10107"
   sha1 ''
 
   def install
@@ -28,7 +27,7 @@ class Puzzles < Formula
   def caveats; <<-EOS
     Puzzles.app was installed in:
       #{opt_prefix}
- 
+
     To symlink into ~/Applications, you can do:
       brew linkapps
     EOS

@@ -1,5 +1,4 @@
 require 'formula'
-require 'fileutils'
 
 class Halibut < Formula
   homepage 'http://www.chiark.greenend.org.uk/~sgtatham/halibut/'
@@ -9,8 +8,8 @@ class Halibut < Formula
   def install
     ENV.deparallelize
 
-    FileUtils.mkdir_p "#{prefix}/bin"
-    FileUtils.mkdir_p "#{man}/man1"
+    mkdir_p "#{bin}"
+    mkdir_p "#{man1}"
 
     system "make", "prefix=#{prefix}", "mandir=#{man}", "all"
     cd "doc/" do
